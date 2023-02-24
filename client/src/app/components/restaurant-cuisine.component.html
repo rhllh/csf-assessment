@@ -1,1 +1,15 @@
-<p>restaurant-cuisine works!</p>
+<h2>List of {{ cuisine }} Restaurants</h2>
+
+<div *ngIf="restaurants.length > 0">
+    <ul>
+        <li *ngFor="let r of restaurants">
+            <a [routerLink]="['/restaurant', r]">
+                {{r}}
+            </a>
+        </li>
+    </ul>
+</div>
+
+<div>
+    <button [routerLink]="['/']">Back</button>
+</div>
